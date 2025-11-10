@@ -1,6 +1,0 @@
-
-public class Quadrat {
-	private int Seitenlaenge;
-	private String linienfarbe;
-	private String fuellfarbe;
-}

@@ -1,9 +1,0 @@
-
-public class SquareApplication {
-
-	public static void main(String[] args) {
-		Quadrat mainSquare = new Quadrat(3, "black", "white"); 
-
-	}
-
-}
