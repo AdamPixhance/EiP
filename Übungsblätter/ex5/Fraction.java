@@ -1,0 +1,39 @@
+
+public class Fraction {
+	private int numerator;
+	private int  denominator;
+	
+	public Fraction(int n) {
+		numerator = n;
+		denominator = 1;
+	}
+	
+	public Fraction(int numerator, int denominator) {
+		this.numerator = numerator;
+		if (denominator == 0) {
+			this.denominator = 1;
+		} else {
+			this.denominator = denominator;
+		}
+	}
+	
+	public void add(Fraction summand) {
+		this.numerator = (this.numerator * summand.denominator) + (summand.numerator * this.denominator);
+		this.denominator = this.denominator * summand.denominator;
+	}
+	
+	public double asDouble() {
+		double asDouble = 0;
+		asDouble = (double)numerator / (double)denominator;
+		return asDouble;
+	}
+	
+	public void multiply(Fraction factor) {
+		numerator = numerator * factor.numerator;
+		denominator = denominator * factor.denominator;
+	}
+	
+	public String toString() {
+		return (numerator + "/" + denominator);
+	}
+}

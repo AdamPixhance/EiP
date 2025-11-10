@@ -1,0 +1,59 @@
+public class Account {
+	private String accountNumber;
+	private Person holder;
+	private int balanceInCents; // Initialisierung per Default auf 0
+
+	public Account(String accountNumber, Person holder) {
+		this.accountNumber = accountNumber; // ohne this probieren
+		this.holder = holder;
+	}
+
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+
+	public Person getHolder() {
+		return holder;
+	}
+
+	public void setHolder(Person holder) {
+		this.holder = holder;
+	}
+
+	public int getBalanceInCents() {
+		return balanceInCents;
+	}
+
+	// Geld einzahlen
+	public void deposit(int amountInCents) {
+		balanceInCents += amountInCents;
+	}
+
+	// Geld abheben und Prüfung, ob genug Geld vorhanden ist
+	public boolean withdraw(int amountInCents) {
+		if (balanceInCents > amountInCents) {
+			balanceInCents -= amountInCents;
+			return true;
+		}
+		return false;
+	}
+
+	public boolean hasPositiveBalance() {
+		// TODO
+		if (balanceInCents > 0) {
+			return true;
+		}
+		return false;
+	}
+
+	// Überweisung auf ein anderes Konto (ohne vorherige Guthabensprüfung)
+	public void transferTo(Account anotherAccount, int amountInCents) {
+		// TODO
+		this.balanceInCents -= amountInCents;
+		anotherAccount.balanceInCents += amountInCents;
+	}
+
+	/*public String toString() {
+		return accountNumber + "(" + holder.getGivenName() + " " + holder.getLastName() + "): " + getBalanceInCents();
+	}*/
+}

@@ -1,0 +1,13 @@
+
+public class ZaehleTEL {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public static void countTEL(char[] zeichen) {
+		
+	}
+
+}

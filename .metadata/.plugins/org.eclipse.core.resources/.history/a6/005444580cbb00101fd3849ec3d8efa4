@@ -1,0 +1,51 @@
+public class Person2 {
+	private String lastName;
+	private String givenName;
+	private char gender = 'u';
+
+	public Person2(String givenName, String lastName) {
+		this.givenName = givenName;
+		this.lastName = lastName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getGivenName() {
+		return givenName;
+	}
+
+	public void setGivenName(String givenName) {
+		this.givenName = givenName;
+	}
+
+	public char getGender() {
+		return gender;
+	}
+
+	public setGender(char gender) {
+		this.gender = gender;
+	}
+
+	public String greeting() {
+		String greeting;
+		switch (gender) { // alternative zu längeren if-else if-else Reihen
+			case 'm': // Fall: gender == 'm'
+				greeting = "Mr.";
+				break; // fertig mit der Behandlung dieses Falles, wenn "break" hier fehlt, wird auch der nächste "case" mit ausgeführt
+			case 'f': // Fall: gender == 'f'
+				greeting = "Mrs.";
+				break;
+			default: // wenn alle vorherigen cases nicht zutreffen; der default case kann weggelassen werden, das Programm wirft dann aber ggf. einen Fehelr zur Laufzeit
+				greeting = givenName;
+				break;
+		}
+		greeting += " " + lastName;
+		return greeting;
+	}
+}

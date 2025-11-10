@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class ZaehleTEL {
+	public static void main(String args[]) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Bitte geben Sie eine Zeichenfolge ein: ");
+		String eingabe = scanner.nextLine();
+		char[] zeichen = eingabe.toCharArray();
+		countTEL(zeichen);
+		scanner.close();
+	}
+}

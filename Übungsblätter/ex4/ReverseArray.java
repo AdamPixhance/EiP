@@ -1,0 +1,25 @@
+import java.util.Arrays;
+
+public class ReverseArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] a = null;
+		int[] b = reverse(a);
+		System.out.println(Arrays.toString(a));
+		System.out.println(Arrays.toString(b));
+
+	}
+	
+	public static int[] reverse(int[] a) {
+		if (a == null) {
+			return null;
+		}
+		int[] ReversedA = new int[a.length];
+		for (int i = 0; i < a.length; i++) {
+			ReversedA[i] = a[a.length-i-1];
+		}
+		return ReversedA;
+	}
+
+}

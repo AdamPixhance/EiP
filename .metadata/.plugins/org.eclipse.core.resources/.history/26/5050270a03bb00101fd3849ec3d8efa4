@@ -1,0 +1,14 @@
+import java.util.Arrays;
+
+public class DemoVektor {
+	final static int DIMINSIONS = 5;
+
+	public static void main(String[] args) {
+		int vek1[] = new int[DIMINSIONS];
+		int vek2[] = new int[DIMINSIONS];
+		
+		System.out.println("Inhalt Vektro 1: " + Arrays.toString(vek1));
+		System.out.println("Inhalt Vektro 2: " + Arrays.toString(vek2));
+	}
+
+}

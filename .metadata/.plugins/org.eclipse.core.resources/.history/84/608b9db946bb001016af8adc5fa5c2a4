@@ -1,0 +1,17 @@
+
+public class Quadrat {
+	private int Seitenlaenge;
+	private String Linienfarbe;
+	private String Fuellfarbe;
+	
+	
+	public Quadrat(int Seitenlaenge) {
+		this.Seitenlaenge = Seitenlaenge;
+	}
+	public Quadrat(int Seitenlaenge, String Linienfarbe, String Fuellfarbe) {
+		this.Seitenlaenge = Seitenlaenge;
+		this.Linienfarbe = Linienfarbe;
+		this.Fuellfarbe = Fuellfarbe;
+	}
+	
+}

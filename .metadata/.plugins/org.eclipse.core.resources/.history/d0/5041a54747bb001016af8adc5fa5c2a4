@@ -1,0 +1,41 @@
+
+public class Quadrat {
+	private int Seitenlaenge;
+	private String Linienfarbe;
+	private String Fuellfarbe;
+	
+	// Min Constructor
+	public Quadrat(int Seitenlaenge) {
+		this.setSeitenlaenge(Seitenlaenge);
+		
+	// Full info Constructor
+	}
+	public Quadrat(int Seitenlaenge, String Linienfarbe, String Fuellfarbe) {
+		this.setSeitenlaenge(Seitenlaenge);
+		this.Linienfarbe = Linienfarbe;
+		this.Fuellfarbe = Fuellfarbe;
+		
+	// getter & setter für Seitenlänge
+	}
+	public int getSeitenlaenge() {
+		return Seitenlaenge;
+	}
+	public void setSeitenlaenge(int seitenlaenge) {
+		Seitenlaenge = seitenlaenge;
+	}
+	// getter & setter für Linienfarbe
+	public String getLinienfarbe() {
+		return Linienfarbe;
+	}
+	public void setLinienfarbe (String linienfarbe) {
+		Linienfarbe = linienfarbe;
+	}
+	// getter & setter für Füllfarbe
+	public String getFuellfarbe() {
+		return Fuellfarbe;
+	}
+	public void getFuellfarbe(String fuellfarbe) {
+		Fuellfarbe = fuellfarbe;
+	}
+	
+}
