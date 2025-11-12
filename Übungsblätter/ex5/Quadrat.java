@@ -7,47 +7,48 @@ public class Quadrat {
 	// Min Constructor
 	public Quadrat(int Seitenlaenge) {
 		this.setSeitenlaenge(Seitenlaenge);
-
-		// Full info Constructor
 	}
 
+	// Full info Constructor
 	public Quadrat(int Seitenlaenge, String Linienfarbe, String Fuellfarbe) {
 		this.setSeitenlaenge(Seitenlaenge);
 		this.Linienfarbe = Linienfarbe;
 		this.Fuellfarbe = Fuellfarbe;
-
-		// getter & setter für Seitenlänge
 	}
 
-	// Flacheninhalt methode
-	public int Flaecheninhalt() {
-		return Seitenlaenge * Seitenlaenge;
-	}
-
-	// getter & setter für Füllfarbe
+	// getter for Füllfarbe
 	public String getFuellfarbe() {
 		return Fuellfarbe;
 	}
 
-	public void getFuellfarbe(String fuellfarbe) {
+	// setter for Füllfarbe
+	public void setFuellfarbe(String fuellfarbe) {
 		Fuellfarbe = fuellfarbe;
 	}
 
-	// getter & setter für Linienfarbe
+	// getter for Linienfarbe
 	public String getLinienfarbe() {
 		return Linienfarbe;
 	}
 
-	public int getSeitenlaenge() {
-		return Seitenlaenge;
-	}
-
+	// setter for Linienfarbe
 	public void setLinienfarbe(String linienfarbe) {
 		Linienfarbe = linienfarbe;
 	}
 
+	// getter for SeitenLänge
+	public int getSeitenlaenge() {
+		return Seitenlaenge;
+	}
+
+	// setter for SeitenLänge
 	public void setSeitenlaenge(int seitenlaenge) {
 		Seitenlaenge = seitenlaenge;
+	}
+
+	// Method "Flächeninhalt", which measures the area of a given Quadrat.
+	public int Flaecheninhalt() {
+		return Seitenlaenge * Seitenlaenge;
 	}
 
 }
