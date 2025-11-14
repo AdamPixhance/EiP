@@ -4,6 +4,12 @@ public class Point {
 	private double x;
 	private double y;
 
+	// Constructor for point
+	public Point(double x, double y) {
+		this.x = x;
+		this.y = y;
+	}
+
 	// Getter and Setter for x
 	public void setX(double x) {
 		this.x = x;
