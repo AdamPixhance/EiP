@@ -51,26 +51,17 @@ public class Time {
 
 	// checking if hours input is valid
 	private boolean validHours(int h) {
-		if (h >= 0 && h <= 23) {
-			return true;
-		}
-		return false;
+		return (h >= 0 && h <= 23);
 	}
 
 	// checking if minutes input is valid
 	private boolean validMinutes(int M) {
-		if (M >= 0 && M <= 59) {
-			return true;
-		}
-		return false;
+		return (M >= 0 && M <= 59);
 	}
 
 	// checking if seconds input is valid
 	private boolean validSeconds(int s) {
-		if (s >= 0 && s <= 23) {
-			return true;
-		}
-		return false;
+		return (s >= 0 && s <= 59);
 	}
 
 	// constructor with hours only
@@ -102,5 +93,83 @@ public class Time {
 		int s = this.seconds;
 		Time cloneTime = new Time(h, m, s);
 		return cloneTime;
+	}
+
+	// the is equal method
+	public boolean isEqualTo(Time other) {
+		boolean isEqualTo = true;
+		if (this.hours != other.hours || this.minutes != other.minutes || this.seconds != other.seconds) {
+			return false;
+		}
+		return isEqualTo;
+	}
+
+	// the add method, which adds a give time to the Time object
+	public void add(Time other) {
+		int tempSeconds = other.seconds;
+		int tempMinutes = other.minutes;
+		int tempHours = other.hours;
+		this.seconds += tempSeconds;
+		if (!(validSeconds(this.seconds))) {
+			this.seconds = this.seconds % 60;
+			tempMinutes++;
+		}
+		this.minutes += tempMinutes;
+		if (!(validMinutes(this.minutes))) {
+			this.minutes = this.minutes % 60;
+			tempHours++;
+		}
+		this.hours += tempHours;
+		if (!(validHours(this.hours))) {
+			this.hours = this.hours % 24;
+		}
+	}
+
+	// the tick method, which adds one second to the time object
+	public void tick() {
+		Time tick = new Time(0, 0, 1);
+		this.add(tick);
+	}
+
+	// the void subtraction methods to help calculate the difference
+	private void subtractHours(int otherHours) {
+		if (this.hours > otherHours) {
+			this.hours = (otherHours + 24) - this.hours;
+		} else {
+			this.hours = otherHours - this.hours;
+		}
+	}
+
+	private void subtractMinutes(int otherMinutes) {
+		if (this.minutes > otherMinutes) {
+			this.minutes = (otherMinutes + 60) - this.minutes;
+			this.hours -= 1;
+		} else {
+			this.minutes = otherMinutes - this.minutes;
+		}
+	}
+
+	private void subtractSeconds(int otherSeconds) {
+		if (this.seconds > otherSeconds) {
+			this.seconds = (otherSeconds + 60) - this.seconds;
+			this.minutes -= 1;
+
+		} else {
+			this.seconds = otherSeconds - this.seconds;
+		}
+	}
+
+	// the difference between to Time objects
+	public Time differenceTo(Time other) {
+		Time differenceTime = new Time(this.hours, this.minutes, this.seconds);
+		differenceTime.subtractHours(other.hours);
+		differenceTime.subtractMinutes(other.minutes);
+		differenceTime.subtractSeconds(other.seconds);
+		return differenceTime;
+	}
+
+	// toString method for testing
+	public String toString() {
+		return String.format("Time(hours: %d, minutes: %d, seconds: %d)", hours, minutes, seconds);
 	}
 }
