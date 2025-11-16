@@ -5,6 +5,8 @@ public class Triangle {
 	private Point a;
 	private Point b;
 	private Point c;
+	// EPSILON for comparisons
+	private static final double EPSILON = 1e-6;
 
 	// default constructor
 	public Triangle(Point a, Point b, Point c) {
@@ -97,28 +99,28 @@ public class Triangle {
 
 	// Method for checking if an Angle is right
 	private boolean isRightAngle(Point x) {
-		return ABandCRelations(x)[0] == ABandCRelations(x)[1];
+		double diff = Math.abs(ABandCRelations(x)[0] - ABandCRelations(x)[1]);
+		return diff < EPSILON;
 	}
 
 	// Method for checking if an Angle is greater than 90%
 	private boolean greaterThanRight(Point x) {
-		return ABandCRelations(x)[0] < ABandCRelations(x)[1];
+		double diff = ABandCRelations(x)[1] - ABandCRelations(x)[0];
+		return diff > EPSILON;
 	}
 
 	// Method for checking if an Angle is less than 90%
 	private boolean lessThanRight(Point x) {
-		return ABandCRelations(x)[0] > ABandCRelations(x)[1];
+		double diff = ABandCRelations(x)[0] - ABandCRelations(x)[1];
+		return diff > EPSILON;
 	}
 
 	// starting with measuring the Task wanted elements from here on
 
 	// Measuring boolean isEquilateral
 	public boolean isEquilateral() {
-		boolean isEquilateral = false;
 		double sidesArray[] = sidesArray();
-		if (sidesArray[0] == sidesArray[1] && sidesArray[0] == sidesArray[2]) {
-			return true;
-		}
+		boolean isEquilateral = (sidesArray[0] == sidesArray[1] && sidesArray[0] == sidesArray[2]);
 		return isEquilateral;
 	}
 
@@ -138,28 +140,19 @@ public class Triangle {
 
 	// Measuring boolean isAcute
 	public boolean isAcute() {
-		boolean isAcute = false;
-		if (lessThanRight(a) && lessThanRight(b) && lessThanRight(c)) {
-			return true;
-		}
+		boolean isAcute = lessThanRight(a) && lessThanRight(b) && lessThanRight(c);
 		return isAcute;
 	}
 
 	// Measuring boolean isRight
 	public boolean isRight() {
-		boolean isRight = false;
-		if (isRightAngle(a) || isRightAngle(b) || isRightAngle(c)) {
-			return true;
-		}
+		boolean isRight = isRightAngle(a) || isRightAngle(b) || isRightAngle(c);
 		return isRight;
 	}
 
 	// Measuring boolean isObtuse
 	public boolean isObtuse() {
-		boolean isObtuse = false;
-		if (greaterThanRight(a) || greaterThanRight(b) || greaterThanRight(c)) {
-			return true;
-		}
+		boolean isObtuse = greaterThanRight(a) || greaterThanRight(b) || greaterThanRight(c);
 		return isObtuse;
 	}
 
