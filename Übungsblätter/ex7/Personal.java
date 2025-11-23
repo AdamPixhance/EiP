@@ -1,15 +1,15 @@
 
 public abstract class Personal extends Person {
-	protected int Personalnummer;
+	protected int personalnummer;
 
-	// getter method for Personalnummer
-	public int getPersonalnummer() {
-		return Personalnummer;
+	// getter method for personalnummer
+	public int getpersonalnummer() {
+		return personalnummer;
 	}
 
-	// setter method for Personalnummer
-	public void setPersonalnummer(int personalnummer) {
-		Personalnummer = personalnummer;
+	// setter method for personalnummer
+	public void setpersonalnummer(int personalnummer) {
+		this.personalnummer = personalnummer;
 	}
 
 	// Default Constructor
@@ -18,20 +18,20 @@ public abstract class Personal extends Person {
 		};
 
 	// Default Constructor with name
-	Personal(String Name) {
-			super(Name);
+	Personal(String name) {
+			super(name);
 		}
-	// Constructor with name and PersonalNummer
-	Personal(String Name, int PersonalNummer){
-		super(Name);
-		this.Personalnummer = PersonalNummer;
+	// Constructor with name and personalnummer
+	Personal(String name, int personalnummer){
+		super(name);
+		this.personalnummer = personalnummer;
 	}
 
 	protected String basePersonalIntro() {
-		return "Ich arbeite an der Uni und meine Personalnummer lautet: " + Personalnummer + ".";
+		return "Ich arbeite an der Uni und meine personalnummer lautet: " + personalnummer + ".";
 	}
 
 	// setting up the abstract Inroduction method to be replaced within all Personal
 	// under classes
-	abstract public String Introduction();
+	abstract public String introduction();
 }

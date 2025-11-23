@@ -1,15 +1,15 @@
 
 public class Professor extends Personal {
-	private String Forschungsgebiet;
+	private String forschungsgebiet;
 
-	// getter method for Forschungsgebiet
-	public String getForschungsgebiet() {
-		return Forschungsgebiet;
+	// getter method for forschungsgebiet
+	public String getforschungsgebiet() {
+		return forschungsgebiet;
 	}
 
-	// explicit Forschungsgebiet Wechseln Methode that is simply a setter method
-	public void ForschungsgebietWechseln(String forschungsgebiet) {
-		Forschungsgebiet = forschungsgebiet;
+	// explicit forschungsgebiet Wechseln Methode that is simply a setter method
+	public void forschungsgebietWechseln(String forschungsgebiet) {
+		this.forschungsgebiet = forschungsgebiet;
 	}
 
 	// default constructor
@@ -18,27 +18,27 @@ public class Professor extends Personal {
 	}
 
 	// constructor with a name
-	Professor(String Name) {
-		super(Name);
+	Professor(String name) {
+		super(name);
 	}
 
 	// constructor with a name and Personal Number
-	Professor(String Name, int PersonalNummer) {
-		super(Name, PersonalNummer);
+	Professor(String name, int personalNummer) {
+		super(name, personalNummer);
 	}
 
 	// full Professor Constructor
-	Professor(String Name, int PersonalNummer, String Forschungsgebiet) {
-		super(Name, PersonalNummer);
-		this.Forschungsgebiet = Forschungsgebiet;
+	Professor(String name, int personalNummer, String forschungsgebiet) {
+		super(name, personalNummer);
+		this.forschungsgebiet = forschungsgebiet;
 	}
 
-	// The Professor specific Introduction method
+	// The Professor specific introduction method
 	// which overrides the Person.java one
 	@Override
-	public String Introduction() {
+	public String introduction() {
 		StringBuilder sb = new StringBuilder(baseIntro());
-		sb = sb.append("\nIch bin Professor und mein Forschungsgebiet ist " + Forschungsgebiet + ".");
+		sb = sb.append("\nIch bin Professor und mein forschungsgebiet ist " + forschungsgebiet + ".");
 		sb = sb.append("\n" + basePersonalIntro());
 		return sb.toString();
 	}

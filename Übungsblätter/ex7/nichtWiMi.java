@@ -1,43 +1,43 @@
 
-public class nichtWiMi extends Personal {
-	private String Bereich;
+public class NichtWiMi extends Personal {
+	private String bereich;
 
-	// getter Bereich
-	public String getBereich() {
-		return Bereich;
+	// getter bereich
+	public String getbereich() {
+		return bereich;
 	}
 
-	// setter Bereich
-	public void setBereich(String Bereich) {
-		this.Bereich = Bereich;
+	// setter bereich
+	public void setbereich(String bereich) {
+		this.bereich = bereich;
 	}
 
 	// default constructor
-	nichtWiMi() {
+	NichtWiMi() {
 		super();
 	}
 
 	// constructor with a name
-	nichtWiMi(String Name) {
-		super(Name);
+	NichtWiMi(String name) {
+		super(name);
 	}
 
 	// constructor with a name and Personal Number
-	nichtWiMi(String Name, int PersonalNummer) {
-		super(Name, PersonalNummer);
+	NichtWiMi(String name, int personalNummer) {
+		super(name, personalNummer);
 	}
 
 	// Full WiMi constructor
-	nichtWiMi(String Name, int PersonalNummer, String Bereich) {
-		super(Name, PersonalNummer);
-		this.Bereich = Bereich;
+	NichtWiMi(String name, int personalNummer, String bereich) {
+		super(name, personalNummer);
+		this.bereich = bereich;
 	}
 
 	// The non-WiMi specific Introduction method which overrides the Person.javaone
 	@Override
-	public String Introduction() {
+	public String introduction() {
 		StringBuilder sb = new StringBuilder(baseIntro());
-		sb = sb.append("\nIch bin nicht-wissenschaftliches Personal und arbeite im Bereich " + Bereich + ".");
+		sb = sb.append("\nIch bin nicht-wissenschaftliches Personal und arbeite im bereich " + bereich + ".");
 		sb = sb.append("\n" + basePersonalIntro());
 		return sb.toString();
 	}

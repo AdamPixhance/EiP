@@ -1,7 +1,7 @@
 
 public class WiMi extends Personal {
 	private Professor unterProf;
-	private String Forschungsgebiet;
+	private String forschungsgebiet;
 
 	// getter method for the UnterProf
 	public Professor getUnterProf() {
@@ -11,12 +11,12 @@ public class WiMi extends Personal {
 	// setter method for the UnterProf
 	public void setUnterProf(Professor unterProf) {
 		this.unterProf = unterProf;
-		this.Forschungsgebiet = unterProf.getForschungsgebiet();
+		this.forschungsgebiet = unterProf.getforschungsgebiet();
 	}
 
-	// getter method for the Forschungsgebiet
-	public String getForschungsgebiet() {
-		return Forschungsgebiet;
+	// getter method for the forschungsgebiet
+	public String getforschungsgebiet() {
+		return forschungsgebiet;
 	}
 
 	// default constructor
@@ -25,27 +25,27 @@ public class WiMi extends Personal {
 	}
 
 	// constructor with a name
-	WiMi(String Name) {
-		super(Name);
+	WiMi(String name) {
+		super(name);
 	}
 
 	// constructor with a name and Personal Number
-	WiMi(String Name, int PersonalNummer) {
-		super(Name, PersonalNummer);
+	WiMi(String name, int personalNummer) {
+		super(name, personalNummer);
 	}
 
 	// full WiMi Constructor
-	WiMi(String Name, int PersonalNummer, Professor unterProf) {
-		super(Name, PersonalNummer);
+	WiMi(String name, int personalNummer, Professor unterProf) {
+		super(name, personalNummer);
 		this.unterProf = unterProf;
-		this.Forschungsgebiet = unterProf.getForschungsgebiet();
+		this.forschungsgebiet = unterProf.getforschungsgebiet();
 	}
 
 	// The WiMi specific Introduction method which overrides the Person.java one
 	@Override
-	public String Introduction() {
+	public String introduction() {
 		StringBuilder sb = new StringBuilder(baseIntro());
-		sb = sb.append("\nIch bin WiMi bei Professor " + unterProf.getName() + " im Forschungsgebiet " + Forschungsgebiet + ".");
+		sb = sb.append("\nIch bin WiMi bei Professor " + unterProf.getname() + " im forschungsgebiet " + forschungsgebiet + ".");
 		sb = sb.append("\n" + basePersonalIntro());
 		return sb.toString();
 	}

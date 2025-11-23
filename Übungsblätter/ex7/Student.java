@@ -1,26 +1,26 @@
 
 public class Student extends Person {
-	private int Martikelnummer;
-	private String Studiengang;
+	private int matrikelnummer;
+	private String studiengang;
 
-	// get Martikelnummer Method
-	public int getMartikelnummer() {
-		return Martikelnummer;
+	// get matrikelnummer Method
+	public int getmatrikelnummer() {
+		return matrikelnummer;
 	}
 
-	// set Martikelnummer Method
-	public void setMartikelnummer(int martikelnummer) {
-		Martikelnummer = martikelnummer;
+	// set matrikelnummer Method
+	public void setmatrikelnummer(int matrikelnummer) {
+		this.matrikelnummer = matrikelnummer;
 	}
 
-	// get Studiengang Method
-	public String getStudiengang() {
-		return Studiengang;
+	// get studiengang Method
+	public String getstudiengang() {
+		return studiengang;
 	}
 
-	// set Studiengang Method
-	public void setStudiengang(String studiengang) {
-		Studiengang = studiengang;
+	// set studiengang Method
+	public void setstudiengang(String studiengang) {
+		this.studiengang = studiengang;
 	}
 
 	// Default Constructor for Students with just name
@@ -29,22 +29,22 @@ public class Student extends Person {
 	};
 
 	// Default Constructor for Students with just name
-	Student(String Name) {
-		super(Name);
+	Student(String name) {
+		super(name);
 	}
 
 	// Constructor for Students with full info
-	Student(String Name, int Martikelnummer, String Studiengang) {
-		super(Name);
-		this.Martikelnummer = Martikelnummer;
-		this.Studiengang = Studiengang;
+	Student(String name, int matrikelnummer, String studiengang) {
+		super(name);
+		this.matrikelnummer = matrikelnummer;
+		this.studiengang = studiengang;
 	}
 
 	// The student specific Introduction method which overrides the Person.java one
 	@Override
-	public String Introduction() {
+	public String introduction() {
 		StringBuilder sb = new StringBuilder(baseIntro());
-		sb = sb.append("\nIch bin Student im " + Studiengang + " und meine Matrikelnummer ist " + Martikelnummer + ".");
+		sb = sb.append("\nIch bin Student im " + studiengang + " und meine Matrikelnummer ist " + matrikelnummer + ".");
 		return sb.toString();
 	}
 }
