@@ -7,7 +7,7 @@ public class TriangleApplication {
 		Point a = new Point(0, 0);
 		Point b = new Point(0, 4);
 		Point c = new Point(4, 0);
-		Triangle test = new Triangle(a, b, c);
+		oldTriangle test = new oldTriangle(a, b, c);
 
 		System.out.println("is Right gives back the value: " + test.isRight());
 		System.out.println("is obtuse gives back the value: " + test.isObtuse());

@@ -1,5 +1,5 @@
 
-public class Triangle {
+public class oldTriangle {
 	// defining the private parameters of a triangle using the previously defined
 	// Point Class
 	private Point a;
@@ -9,7 +9,7 @@ public class Triangle {
 	private static final double EPSILON = 1e-6;
 
 	// default constructor
-	public Triangle(Point a, Point b, Point c) {
+	public oldTriangle(Point a, Point b, Point c) {
 		this.a = a;
 		this.b = b;
 		this.c = c;
