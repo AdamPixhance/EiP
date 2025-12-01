@@ -8,5 +8,6 @@ class WieHeisstDu {
 
 		String userName = terminalScanner.nextLine();
 		System.out.println("Hallo " + userName + "!");
+		terminalScanner.close();
 	}
 }

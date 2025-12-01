@@ -11,5 +11,6 @@ class WasLernstDu {
 		} else {
 			System.out.println("Es ist gut " + learned + " zu lernen, aber vergiss nicht auch Java zu lernen!");
 		}
+		terminalScanner.close();
 	}
 }

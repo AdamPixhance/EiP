@@ -18,6 +18,7 @@ public class IdentitaetvonObjekten {
 			return;
 		}
 
+		@SuppressWarnings("unused")
 		class GanzeZahl { // "inner-class", eigentlich unschön
 			int wert = 12;
 		}
