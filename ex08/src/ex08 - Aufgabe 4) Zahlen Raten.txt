@@ -1,0 +1,10 @@
+a) Welcher aus der Vorlesung bekannte Algorithmus eignet sich dafür?:
+Antwort: Binäre Suche
+
+c) Wie oft muss der Computer für Zahlen zwischen 1 und 15.000 raten, um eine Lösung zu erhalten? Geben Sie den Rechenweg an!
+Für Binäre Such Algorithmus, gilt log₂(maxNumber) als anzahl von Schritten um eine Lösung zu erhalten im worst case.
+Das heißt für log2(15 000) = 13,872674880270605572935016661905.
+hochgerundet auf 14*raten, bis der Computer ein Lösung erhält, in worst case scenario
+
+d) Welchen Zahlenbereich würde der Computer abdecken, wenn er 4-mal raten dürfte? Geben Sie den Rechenweg an!
+2^4 = 16 Zahlen. Also [0, 15], da die Null enthalten ist.
